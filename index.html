@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Panda</title>
+	<!--<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="main.js"></script>-->
+	<script src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css"></link>
+
+   <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="node_modules/sweetalert/dist/sweetalert.css">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+
+</head>
+<body>
+<div class="container">
+
+	<div class="innr-container">
+
+		<div class="top-menu">
+			<h1 style="text-align:center;" id="result">0</h1>
+				<div style="text-align:center;" class="img"> <img id="panda" src="1x/Asset2.png"></div>
+
+
+
+					<div style="text-align:center;" class="botton-menu">
+					<a class="waves-effect waves-light btn red" id="hurt">Hurt</a>
+
+					<a class="waves-effect waves-light btn blue" id="animate" onclick="an();">Animate</a>
+
+
+					<a class="waves-effect waves-light btn green" id="feed" onclick="feed();">Feed</a>
+						
+						<a class="waves-effect waves-light btn orange darken-1" id="restart" onclick="restart();">Restart</a>
+
+					
+					</div>
+		</div>
+		
+	</div>
+</div>
+
+
+  <!--  <script>
+  function play(){
+       var audio = document.getElementById("audio");
+       audio.play();
+                 }
+   </script>
+
+<input type="button" value="PLAY"  onclick="play()">
+<audio id="audio" src="http://www.soulwinning.info/sounds/gold_city_quartet-jesus_cares_for_you.mp3" ></audio> -->
+
+
+
+
+
+
+<script>
+
+var total = 0;
+var image =  document.getElementById("panda");
+
+document.getElementById('hurt').addEventListener('click', function() {
+
+	readyhurt(hurt);
+});
+
+function readyhurt(callback,){
+
+
+	document.getElementById("panda").src="1x/Asset1.png";
+
+               total = total -10;
+  	document.getElementById('result').innerHTML = total;
+
+
+setTimeout(function(){ callback()  }, 1500);
+}
+
+function hurt() {
+
+	
+		//image.getAttribute('src') === "1x/Asset1.png"
+
+		//document.getElementById("panda").src="1x/Asset1.png";
+
+          //     total = total -10;
+  	//document.getElementById('result').innerHTML = total;
+           
+
+	//alert("hello")
+
+swal ( "Oops" ,  "You hurt Bamboo: -10 points" ,  "error" );
+console.log(total);
+
+if (total <= 0) {
+
+	document.getElementById("panda").src="1x/Asset8.png";
+} 
+ else if( total > 10) {
+
+document.getElementById("panda").src="1x/Asset2.png";
+} 
+};
+
+function an(){
+
+ total = total + 1;
+  document.getElementById('result').innerHTML = total;
+
+swal(
+  'Animated!',
+  'You have animated Bamboo',
+  'info'
+)
+
+
+console.log(total);
+};
+
+
+function feed(){
+
+	total = total + 10;
+  document.getElementById('result').innerHTML = total;
+
+swal(
+  'Good job!',
+  'You have feed Bamboo: +10 points',
+  'success'
+)
+
+
+console.log(total);
+};
+	
+function restart(){
+
+	document.getElementById("panda").src="1x/Asset2.png";
+
+total = 0;
+  document.getElementById('result').innerHTML = total;
+
+  alert("Bamboo has been reset")
+console.log(total);
+}
+
+
+//document.getElementById('hurt').onclick = zero;
+//document.getElementById('animate').onclick = add5;
+//document.getElementById('feed').onclick = add10;
+//document.getElementById('restart').onclick = restart;
+
+//function zero() {
+  //total = total -10;
+ // document.getElementById('result').innerHTML = total;
+//}
+
+//function add5() {
+ // total = total + 1;
+ // document.getElementById('result').innerHTML = total;
+//}
+
+// function add10() {
+//   total = total + 10;
+//   document.getElementById('result').innerHTML = total;
+// }
+
+
+
+
+
+</script>
+	
+</body>
+</html>
