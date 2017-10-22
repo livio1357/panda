@@ -38,7 +38,7 @@
 					<a class="waves-effect waves-light btn blue" id="animate" onclick="an();">Animate</a>
 
 
-					<a class="waves-effect waves-light btn green" id="feed" onclick="feed();">Feed</a>
+					<a class="waves-effect waves-light btn green" id="feed">Feed</a>
 						
 						<a class="waves-effect waves-light btn orange darken-1" id="restart" onclick="restart();">Restart</a>
 
@@ -75,6 +75,11 @@ document.getElementById('hurt').addEventListener('click', function() {
 	readyhurt(hurt);
 });
 
+
+document.getElementById('hurt').addEventListener('click', function() {
+
+	readyhurt(hurt);
+
 function readyhurt(callback,){
 
 
@@ -84,7 +89,7 @@ function readyhurt(callback,){
   	document.getElementById('result').innerHTML = total;
 
 
-setTimeout(function(){ callback()  }, 1500);
+setTimeout(function(){ callback()  }, 1000);
 }
 
 function hurt() {
@@ -100,16 +105,21 @@ function hurt() {
 
 	//alert("hello")
 
-swal ( "Oops" ,  "You hurt Bamboo: -10 points" ,  "error" );
+swal ( "You hurt me" ,  "You hurt Bamboo: -10 points" ,  "error" );
 console.log(total);
 
-if (total <= 0) {
+if (total < -15){
 
-	document.getElementById("panda").src="1x/Asset8.png";
-} 
+document.getElementById("panda").src="1x/Asset9.png";
+	
+}
  else if( total > 10) {
 
 document.getElementById("panda").src="1x/Asset2.png";
+}  
+else if (total <= 1) {
+
+	document.getElementById("panda").src="1x/Asset8.png";
 } 
 };
 
@@ -142,6 +152,12 @@ swal(
 
 
 console.log(total);
+
+
+
+
+
+
 };
 	
 function restart(){
