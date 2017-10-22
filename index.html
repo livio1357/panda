@@ -23,10 +23,10 @@
 </head>
 <body>
 <div class="container">
-
 	<div class="innr-container">
 
 		<div class="top-menu">
+		<img class="owl" src="1x/owl.png">
 			<h1 style="text-align:center;" id="result">0</h1>
 				<div style="text-align:center;" class="img"> <img id="panda" src="1x/Asset2.png"></div>
 
@@ -60,8 +60,19 @@ vertical-align:bottom;
 
 .btn{
 
-margin-bottom: 5px;
+margin-bottom: 15px;
+margin-right:5px;
+margin-left:5px;
 
+}
+
+.owl{
+
+
+	    height: 75px;
+    width: 75px;
+    margin-left: 75%;
+    margin-top: 1%;
 }
 
 </style>
@@ -109,7 +120,7 @@ function feedgo(callback,){
   	document.getElementById('result').innerHTML = total;
 
 
-setTimeout(function(){ callback()  }, 500);
+setTimeout(function(){ callback()  }, 250);
 };
 
 function readyhurt(callback,){
@@ -121,7 +132,7 @@ function readyhurt(callback,){
   	document.getElementById('result').innerHTML = total;
 
 
-setTimeout(function(){ callback()  }, 500);
+setTimeout(function(){ callback()  }, 250);
 }
 
 
@@ -134,7 +145,7 @@ function animatepanda(callback,){
   	document.getElementById('result').innerHTML = total;
 
 
-setTimeout(function(){ callback()  }, 500);
+setTimeout(function(){ callback()  }, 250);
 }
 
 function hurt() {
