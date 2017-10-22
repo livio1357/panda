@@ -26,7 +26,7 @@
 	<div class="innr-container">
 
 		<div class="top-menu">
-		<img class="owl" src="1x/owl.png">
+		<a > <img class="owl" id="owl" src="1x/owl.png"> </a>
 			<h1 style="text-align:center;" id="result">0</h1>
 				<div style="text-align:center;" class="img"> <img id="panda" src="1x/Asset2.png"></div>
 
@@ -69,11 +69,23 @@ margin-left:5px;
 .owl{
 
 
-	    height: 75px;
-    width: 75px;
+	    height: 60px;
+    width: 60px;
     margin-left: 75%;
     margin-top: 1%;
 }
+
+
+.owl:hover {
+	background: rgba(0,0,0,0);
+	color: #3a7999;
+	box-shadow: inset 0 0 0 3px #3a7999;
+}
+
+
+
+
+
 
 </style>
   <!--  <script>
@@ -109,6 +121,11 @@ document.getElementById('feed').addEventListener('click', function() {
 document.getElementById('animate').addEventListener('click', function() {
 
 	animatepanda(an);
+});
+
+document.getElementById('owl').addEventListener('click', function() {
+
+	owl();
 });
 
 function feedgo(callback,){
@@ -287,6 +304,44 @@ total = 0;
 console.log(total);
 }
 
+
+function owl(){
+
+	alert("hello")
+
+// swal.setDefaults({
+//   input: 'text',
+//   confirmButtonText: 'Next &rarr;',
+//   showCancelButton: true,
+//   progressSteps: ['1', '2', '3']
+// })
+
+// var steps = [
+//   {
+//     title: 'Question 1',
+//     text: 'Chaining swal2 modals is easy'
+//   },
+//   'Question 2',
+//   'Question 3'
+// ]
+
+// swal.queue(steps).then(function (result) {
+//   swal.resetDefaults()
+//   swal({
+//     title: 'All done!',
+//     html:
+//       'Your answers: <pre>' +
+//         JSON.stringify(result) +
+//       '</pre>',
+//     confirmButtonText: 'Lovely!'
+//   })
+// }, function () {
+//   swal.resetDefaults()
+// })
+
+
+
+}
 
 //document.getElementById('hurt').onclick = zero;
 //document.getElementById('animate').onclick = add5;
