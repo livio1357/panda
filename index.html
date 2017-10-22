@@ -19,7 +19,7 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div class="container">
@@ -33,7 +33,7 @@
 
 
 					<div style="text-align:center;" class="botton-menu">
-					<a class="waves-effect waves-light btn red" id="hurt">Hurt</a>
+					<a marginb class="waves-effect waves-light btn red" id="hurt">Hurt</a>
 
 					<a class="waves-effect waves-light btn blue" id="animate" onclick="an();">Animate</a>
 
@@ -49,7 +49,22 @@
 	</div>
 </div>
 
+<style type="text/css">
+	
 
+	.swal-modal{
+
+vertical-align:bottom;
+
+	}
+
+.btn{
+
+margin-bottom: 5px;
+
+}
+
+</style>
   <!--  <script>
   function play(){
        var audio = document.getElementById("audio");
@@ -82,7 +97,7 @@ document.getElementById('feed').addEventListener('click', function() {
 
 document.getElementById('animate').addEventListener('click', function() {
 
-	feedgo(feed);
+	animatepanda(an);
 });
 
 function feedgo(callback,){
@@ -103,6 +118,19 @@ function readyhurt(callback,){
 	document.getElementById("panda").src="1x/Asset1.png";
 
                total = total -10;
+  	document.getElementById('result').innerHTML = total;
+
+
+setTimeout(function(){ callback()  }, 500);
+}
+
+
+function animatepanda(callback,){
+
+
+	document.getElementById("panda").src="1x/Asset11.png";
+
+               total = total -3;
   	document.getElementById('result').innerHTML = total;
 
 
@@ -152,8 +180,36 @@ else if (total <= 1) {
 
 function an(){
 
- total = total + 1;
-  document.getElementById('result').innerHTML = total;
+
+
+	if (total < -15){
+
+document.getElementById("panda").src="1x/Asset9.png";
+	
+}else if(total > 89){
+
+	document.getElementById("panda").src="1x/Asset6.png";
+}
+
+
+else if(total > 59){
+
+	document.getElementById("panda").src="1x/Asset10.png";
+}
+ else if( total > 10) {
+
+document.getElementById("panda").src="1x/Asset2.png";
+}  
+else if (total <= 1) {
+
+	document.getElementById("panda").src="1x/Asset8.png";
+} 
+
+
+	//document.getElementById("panda").src="1x/Asset11.png";
+
+ //total = total + 1;
+ // document.getElementById('result').innerHTML = total;
 
 swal(
   'Animated!',
