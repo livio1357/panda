@@ -75,10 +75,27 @@ document.getElementById('hurt').addEventListener('click', function() {
 	readyhurt(hurt);
 });
 
+document.getElementById('feed').addEventListener('click', function() {
 
-document.getElementById('hurt').addEventListener('click', function() {
+	feedgo(feed);
+});
 
-	readyhurt(hurt);
+document.getElementById('animate').addEventListener('click', function() {
+
+	feedgo(feed);
+});
+
+function feedgo(callback,){
+
+
+	document.getElementById("panda").src="1x/Asset2.png";
+
+               total = total +10;
+  	document.getElementById('result').innerHTML = total;
+
+
+setTimeout(function(){ callback()  }, 500);
+};
 
 function readyhurt(callback,){
 
@@ -89,7 +106,7 @@ function readyhurt(callback,){
   	document.getElementById('result').innerHTML = total;
 
 
-setTimeout(function(){ callback()  }, 1000);
+setTimeout(function(){ callback()  }, 500);
 }
 
 function hurt() {
@@ -112,6 +129,15 @@ if (total < -15){
 
 document.getElementById("panda").src="1x/Asset9.png";
 	
+}else if(total > 89){
+
+	document.getElementById("panda").src="1x/Asset6.png";
+}
+
+
+else if(total > 59){
+
+	document.getElementById("panda").src="1x/Asset10.png";
 }
  else if( total > 10) {
 
@@ -122,6 +148,7 @@ else if (total <= 1) {
 	document.getElementById("panda").src="1x/Asset8.png";
 } 
 };
+
 
 function an(){
 
@@ -141,8 +168,8 @@ console.log(total);
 
 function feed(){
 
-	total = total + 10;
-  document.getElementById('result').innerHTML = total;
+	//total = total + 10;
+  //document.getElementById('result').innerHTML = total;
 
 swal(
   'Good job!',
@@ -151,11 +178,33 @@ swal(
 )
 
 
+if (total < -15){
+
+document.getElementById("panda").src="1x/Asset9.png";
+	
+}else if(total > 89){
+
+	document.getElementById("panda").src="1x/Asset6.png";
+}
+
+
+else if(total > 59){
+
+	document.getElementById("panda").src="1x/Asset10.png";
+}
+
+ else if( total > 10) {
+
+
+document.getElementById("panda").src="1x/Asset2.png";
+}  
+else if (total <= 1) {
+
+	document.getElementById("panda").src="1x/Asset8.png";
+} 
+
+
 console.log(total);
-
-
-
-
 
 
 };
